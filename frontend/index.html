@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="jquery.js"></script>
-    <script src="script.js"></script>
+    <title> Transparent Login Form Design </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div class="login-box">
+    <img src="avatar.png" class="avatar">
+    <h1>Login Here</h1>
+    <form>
+        <p>Username</p>
+        <input type="text" name="username" placeholder="Enter Username">
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Enter Password">
+        <input type="submit" name="submit" value="Login">
+        <a href="#">Forget Password</a><br><br>
+        <a href="#">Sign up</a>
+    </form>
 
-    <div id="login-box">
-        <input type="text" id="username" placeholder="username">
-        <button id="login-btn">Login</button>
-    </div>
 
-    <div id="msg-box" style="display: none">
-        <input id="msg" type="text">
-        <button id="sendmsg">Send</button>
-        <ul id="msglist"></ul>
-    </div>
+</div>
+
 </body>
 </html>
