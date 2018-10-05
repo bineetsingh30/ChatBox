@@ -7,38 +7,39 @@
     <script src="index.js"></script>
 </head>
 <body>
-<div class="login-box" id="login">
+<div class="login-box">
     <img src="avatar.png" class="avatar">
     <h1>Anonymous Chat</h1>
-
+    <div id="login">
     <button id="enter">Enter a room</button><br><br>
     <button id="create">Create a room</button>    
     
     <div id="enterdiv" style="display: none">
         <p>Name</p>
-        <input type="text" name="username" placeholder="Enter your name">
+        <input type="text" id="eusername" placeholder="Enter your name">
         <p>Room id</p>
-        <input type="text" name="roomid" placeholder="Enter room id">
-        <button id="submit">Enter</button>   
+        <input type="text" id="roomid" placeholder="Enter room id">
+        <p>Password</p>
+        <input type="password" id="epassword" placeholder="Enter password">
+        <button id="enterroom">Enter</button>   
     </div>
 
     <div id="creatediv" style="display: none">
         <p>Name</p>
-        <input type="text" name="username" placeholder="Enter your name">
-        <button id="submit">Create</button>   
+        <input type="text" id="cusername" placeholder="Enter your name">
+        <p>Password</p>
+        <input type="password" id="cpassword" placeholder="Enter password">
+        <button id="createroom">Create</button>   
     </div>
 
-    
-    
-
-
+    </div>
+    <div id="messagebox" style="display: none">
+            <ul id="message-list"></ul>
+            <input type="text" id="sendmessage">
+            <button id="sendbutton"> Send </button>
+    </div>
 </div>
 
-<div>
-    <li>
-        
-    </li>
-</div>
 
 </body>
 </html>
