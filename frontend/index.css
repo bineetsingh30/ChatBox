@@ -8,8 +8,8 @@ body{
     box-sizing: border-box
 }
 .login-box{
-    width: 320px;
-    height: 420px;
+    width: 500px;
+    height: 500px;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     top: 50%;
@@ -61,7 +61,8 @@ h1{
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
-    width: 100%;
+    width: 200px;
+
 }
 .login-box input[type="submit"]:hover, button:hover
 {
@@ -78,4 +79,11 @@ h1{
 .login-box a:hover
 {
     color: #39dc79;
+}
+.scroll
+{
+    height:200px;
+    /*width: 100px;*/
+    overflow-x: hidden;
+    overflow-y: auto;
 }
