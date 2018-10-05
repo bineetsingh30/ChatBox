@@ -1,23 +1,43 @@
 <html>
 <head>
-    <title> Transparent Login Form Design </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Chat Box</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-<div class="login-box">
+<div class="login-box" id="login">
     <img src="avatar.png" class="avatar">
-    <h1>Login Here</h1>
-    <form>
-        <p>Username</p>
-        <input type="text" name="username" placeholder="Enter Username">
-        <p>Password</p>
-        <input type="password" name="password" placeholder="Enter Password">
-        <input type="submit" name="submit" value="Login">
-        <a href="#">Forget Password</a><br><br>
-        <a href="#">Sign up</a>
-    </form>
+    <h1>Anonymous Chat</h1>
+
+    <button id="enter">Enter a room</button><br><br>
+    <button id="create">Create a room</button>    
+    
+    <div id="enterdiv" style="display: none">
+        <p>Name</p>
+        <input type="text" name="username" placeholder="Enter your name">
+        <p>Room id</p>
+        <input type="text" name="roomid" placeholder="Enter room id">
+        <button id="submit">Enter</button>   
+    </div>
+
+    <div id="creatediv" style="display: none">
+        <p>Name</p>
+        <input type="text" name="username" placeholder="Enter your name">
+        <button id="submit">Create</button>   
+    </div>
+
+    
+    
 
 
+</div>
+
+<div>
+    <li>
+        
+    </li>
 </div>
 
 </body>
