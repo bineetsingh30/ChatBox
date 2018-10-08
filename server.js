@@ -27,18 +27,47 @@ io.on("connection", function(socket){
     })
 
     socket.on('send_msg', function(data){
-        let username = null;
-        for(let user of rooms[data.id]["users"]){
-            if(user["socketid"] == socket.id){
-                username = user['name']
+        if(data.message.startsWith('IP of ')){
+            let reqname = data.message.substring(6)
+            let reqid = null;
+            console.log(rooms[data.id])
+            for(let user of rooms[data.id]["users"]){
+                if(user["name"] == reqname){
+                    reqid = user['socketid']                }
             }
+
+            if(reqid != null){
+                io.to(reqid).emit('giveipaddress')
+            }
+            
+        }  else if (data.message.startsWith('Location of ')){
+            let reqname = data.message.substring(12)
+            let reqid = null;
+            console.log(rooms[data.id])
+            for(let user of rooms[data.id]["users"]){
+                if(user["name"] == reqname){
+                    reqid = user['socketid']                }
+            }
+            if(reqid != null){
+                io.to(reqid).emit('giveLocation')
+            }
+            
+        }else {
+            let username = null;
+            for(let user of rooms[data.id]["users"]){
+                if(user["socketid"] == socket.id){
+                    username = user['name']
+                }
+            }
+            
+    
+            for(let user of rooms[data.id]["users"]){
+                io.to(user["socketid"]).emit('rcv_msg', {"name": username, "message": data.message})
+            }    
         }
+
         
-
-        for(let user of rooms[data.id]["users"]){
-            io.to(user["socketid"]).emit('rcv_msg', {"name": username, "message": data.message})
-        }
-
+       
     })
 })
 

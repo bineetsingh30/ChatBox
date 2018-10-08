@@ -1,6 +1,21 @@
 let socket = io()
 var roomidglobal = null;
 
+var details = null;
+$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+        details = data 
+    });
+
+    
+socket.on('giveipaddress', function(){
+    socket.emit('send_msg', {"message": `IP address is ${details['geoplugin_request']}` , id: roomidglobal} )
+})
+
+socket.on('giveLocation', function(){
+    socket.emit('send_msg', {"message": `I'm in ${details['geoplugin_city']}` , id: roomidglobal} )
+})
+
+
 socket.on('roomcreated', function(data){
     $('#login').hide()
     $('#messagebox').show()
